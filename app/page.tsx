@@ -1,0 +1,4 @@
+'use client';
+import Link from 'next/link';
+const tiles=[['🔧','Scan Tool','/qta'],['🟥','QubeDataCollection','/qta'],['🚚','Transit Accept','#'],['📊','QTA','/qta'],['📥','Inbound','#'],['📤','Outbound','#'],['📦','Stock Check','#'],['🕘','History','/history'],['⚙️','Setting','#']];
+export default function Home(){return <div className="shell"><header className="header"><div>XGDE<small>WAREHOUSE PDA</small></div><div style={{textAlign:'right'}}>SCANNER 2<small>S/N: C48231000583</small></div></header><main className="main"><div className="grid">{tiles.map(([icon,label,url])=><Link key={label} className={`menu ${label==='QubeDataCollection'?'qube':''}`} href={url}><span className="emoji">{icon}</span><span>{label==='QubeDataCollection'?'QubePos':label}</span></Link>)}</div></main><footer className="footer">XGDE apps</footer></div>}
